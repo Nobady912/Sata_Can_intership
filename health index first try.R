@@ -24,6 +24,8 @@ library (RColorBrewer)
 library(wesanderson)
 library(writexl)
 library(dplyr)
+library(dplyr)
+
 
 
 #let's set the start year
@@ -346,5 +348,21 @@ final_consumption.ts<- ts(final_consumption.st$VALUE, start = c(final_consumptio
 
 the_percentage <- ((food_spending.ts +water_cost.ts + enegy.ts + rental_payment.ts + Imputed_rental_fees.ts)/final_consumption.ts)*100
 plot(the_percentage)
-##
+
+
+##### the affortability index
+the_percentage.df <- data.frame(
+  Time = time(the_percentage),    # Create a time column from the time series index
+  Value = as.numeric(the_percentage)  # Extract values from the time series
+)
+
+# Apply mutate to scale the 'Value' within the data frame
+the_percentage.df <- the_percentage.df %>%
+  mutate(Scaled_Value = (Value - min(Value)) / (max(Value) - min(Value)))
+
+
+affortability_index <- 1 - the_percentage.df$Scaled_Value
+
+plot(affortability_index, type = "l")
+
 
