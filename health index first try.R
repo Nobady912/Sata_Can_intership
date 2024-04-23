@@ -360,9 +360,13 @@ the_percentage.df <- data.frame(
 the_percentage.df <- the_percentage.df %>%
   mutate(Scaled_Value = (Value - min(Value)) / (max(Value) - min(Value)))
 
-
 affortability_index <- 1 - the_percentage.df$Scaled_Value
 
 plot(affortability_index, type = "l")
+
+summary(affortability_index)
+#####
+
+
 
 
