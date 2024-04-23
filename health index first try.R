@@ -111,29 +111,13 @@ unemployment_rate.ts <- unemployment_rate.ts %>% mutate(
     #. Discretionary Income
 
 
-
-######Adjusted household disposable income
-#https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=3610058801
-adjusted_HDI_raw <- "v1059426366" #the series number for the statstic canada 
-adjusted_HDI.st <- get_cansim_vector(adjusted_HDI_raw, start_time = "2000-01-01")
-adjusted_HDI_year.st <- year(adjusted_HDI.st$REF_DATE[1])
-adjusted_HDI_month.st <- month(adjusted_HDI.st$REF_DATE[1])
-
-#transfer data to the time series time
-c(adjusted_HDI_year.st, adjusted_HDI_month.st)
-adjusted_HDI.ts<- ts(adjusted_HDI.st$VALUE, start = c(adjusted_HDI_year.st, adjusted_HDI_month.st), freq = 1)
-#now its time series data!
-
-plot(adjusted_HDI.ts, col= "#003B6F",lwd=2.4)
-#draw the data, color and the wide of the line
-legend('topleft', lty=1,lwd=2.4, legend= c('adjusted_HDI'), col = c("#003B6F")) #Tardis blue
-
-###### CPI
+######CPI
 #https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=1810000501
 #v41693271
+#the things is the CPI is base on the 2002 
 
 CPI_raw <- "v41693271" #the series number for the statstic canada 
-CPI.st <- get_cansim_vector(CPI_raw, start_time = "2000-01-01")
+CPI.st <- get_cansim_vector(CPI_raw, start_time = "2000-01-01", end_time = "2023-01-01")
 CPI_year.st <- year(CPI.st$REF_DATE[1])
 CPI_month.st <- month(CPI.st$REF_DATE[1])
 
@@ -141,19 +125,78 @@ CPI_month.st <- month(CPI.st$REF_DATE[1])
 c(CPI_year.st, CPI_month.st)
 CPI.ts<- ts(CPI.st$VALUE, start = c(CPI_year.st, CPI_month.st), freq = 1)
 #now its time series data!
+#######
+#### transfer the CPI into the adjusting factor
+CPI_adjust_factor <- 100/CPI.ts
+####### 
 
-plot(CPI.ts, col= "#003B6F",lwd=2.4)
+
+######Adjusted household disposable income
+#https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=3610058801
+HDI_raw <- "v1059426366" #the series number for the statstic canada 
+HDI.st <- get_cansim_vector(HDI_raw, start_time = "2000-01-01", end_time = "2023-01-01")
+HDI_year.st <- year(HDI.st$REF_DATE[1])
+HDI_month.st <- month(HDI.st$REF_DATE[1])
+
+#transfer data to the time series time
+c(HDI_year.st, HDI_month.st)
+HDI.ts<- ts(HDI.st$VALUE, start = c(HDI_year.st, HDI_month.st), freq = 1)
+#now its time series data!
+#adjust the HDI now
+adjust_HDI_ts <- HDI.ts * CPI_adjust_factor
+
+plot(HDI.ts)
+lines(adjust_HDI_ts)
+
+plot(adjusted_HDI.ts, col= "#003B6F",lwd=2.4)
 #draw the data, color and the wide of the line
 legend('topleft', lty=1,lwd=2.4, legend= c('adjusted_HDI'), col = c("#003B6F")) #Tardis blue
 
+#transfer it into the year over year growth rate
+adjusted_HDI.yoy <- diff(log(adjusted_HDI.ts), 1)
 
-
-
+plot(adjusted_HDI.yoy, type = "l",col= "#003B6F",lwd=2.4, 
+     main = 'Canadian HDI change 2001-2023', ylab = 'the percantage change', xlab = 'time')
+abline(h = 0)
+rect(xleft= 2015, ybottom = -4, xright= 2023, ytop=0, col= "#003B6F23")
+#p/l/b/o/s/h/n
+#Points plot (default)/Line plot/Both (points and line)/Both (overplotted)/Both (overplotted)/Histogram-like plot/No plotting
 
 ######
 # Household final consumption expenditure (HFCE)
-######
+#v116885921
+HFCE_raw <- "v116885921" #the series number for the statstic canada 
+HFCE.st <- get_cansim_vector(HFCE_raw, start_time = "2000-01-01", end_time = "2023-01-01")
+HFCE_year.st <- year(HFCE.st$REF_DATE[1])
+HFCE_month.st <- month(HFCE.st$REF_DATE[1])
 
+#transfer data to the time series time
+c(HFCE_year.st, HFCE_month.st)
+HFCE.ts<- ts(HFCE.st$VALUE, start = c(HFCE_year.st,HFCE_month.st), freq = 1)
+#now its time series data!
 
+#adjust_HFCE.ts
+adjust_HFCE.ts <-HFCE.ts * CPI_adjust_factor
 
+####
+#Disposable Income Surplus=Real HDI−Real HFCE
+disposable_income_surplus <- adjust_HDI_ts  - adjust_HFCE.ts 
+#plot(disposable_income_surplus )
+#####
+#what is going on here? 
+disposable_income_surplus.yoy <- diff(log(disposable_income_surplus),1)
 
+#its seem wield? 
+#let transfer it anyway?
+
+library(dplyr)
+
+# Convert the time series to a data frame
+disposable_income_surplus_df <- data.frame(value = as.numeric(disposable_income_surplus.yoy))
+
+# Scale the values using dplyr
+disposable_income_surplus_scale <- disposable_income_surplus_df%>%
+  mutate(scaled_value = (value - min(value, na.rm = TRUE)) / 
+           (max(value, na.rm = TRUE) - min(value, na.rm = TRUE)))
+
+plot(disposable_income_surplus_scale$scaled_value, type = "l")
