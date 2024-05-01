@@ -24,7 +24,7 @@ library(wesanderson)
 library(writexl)
 library(dplyr)
 
-setwd("~/Documents/GitHub/Sata_Can_intership")
+#setwd("~/Documents/GitHub/Sata_Can_intership")
 
 ########
 #new idea, money spend on food shelter and energy percentage of 
@@ -52,7 +52,7 @@ HFCE_month.st <- month(HFCE.st$REF_DATE[1])
 
 #transfer data to the time series time
 c(HFCE_year.st, HFCE_month.st)
-HFCE.ts<- ts(HFCE.st$VALUE, start = c(HFCE_year.st,HFCE_month.st), freq = 4)
+HFCE.ts<- ts(HFCE.st$VALUE, start = c(HFCE_year.st,HFCE_month.st), freq = 1)
 #now its time series data!
 
 
