@@ -63,12 +63,12 @@ setwd("~/Documents/GitHub/Sata_Can_intership")
 ##############################################################################
 
 #4- (QoL Hub) Environment
+#
 
-
-
-
-
-
+##############################################################################
+#https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810045701&pickMembers%5B0%5D=1.1&pickMembers%5B1%5D=2.1&pickMembers%5B2%5D=3.2&pickMembers%5B3%5D=4.1&pickMembers%5B4%5D=5.1
+#Main mode of commuting by commuting duration, time leaving for work, age and gender: Canada, provinces and territories, census metropolitan areas and census agglomerations with parts
+      #
 
 
 
