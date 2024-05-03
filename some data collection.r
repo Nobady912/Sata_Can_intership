@@ -4,6 +4,7 @@
 #statstic intership project - quality of life index
 #Tie 2024/05/01 
 
+###
 #this code including following topic data collection and cleaning 
 #1 - (Numbeo) Climate Index (useable)
 #2 - (Numbeo) Pollution Index
@@ -11,7 +12,7 @@
 #4- (QoL Hub) Environment
 #5. the ratio between the amount of education and the wage
 
-
+##############################################################################
 #Step one Lode the all package that necessary. 
 library (lubridate)    #Simplifies date and time analysis in R.
 library (cansim)       #Access and manipulate Canadian statistical data.
@@ -22,8 +23,7 @@ library (RColorBrewer) #: Provides color schemes for maps and charts.
 library(wesanderson) #Color palettes inspired by Wes Anderson films.
 library(writexl) #rite data frames to Excel without external dependencies.
 library(dplyr) #Facilitates data manipulation and analysis.
-
-
+##############################################################################
 
 setwd("~/Documents/GitHub/Sata_Can_intership") 
 
@@ -34,6 +34,8 @@ setwd("~/Documents/GitHub/Sata_Can_intership")
 #1.1 using the package access the data##########################################
   #I need some time to calcuate the majo
   #the issue: still working on getting the EECC data and run it
+
+
 
 ##############################################################################
 
@@ -71,8 +73,17 @@ setwd("~/Documents/GitHub/Sata_Can_intership")
       #
 
 
+#Percentage of 15-to 29-year-olds in education and not in education by labour force status, highest level of education attained, age group and sex
+#https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3710019601
 
 
+#Convenient access to public transport by geography
+#https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=2310030901
 
+#Satisfaction with local environment, by gender and province 1, 2, 3, 4, 5, 6
+#https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=4510006901
+
+#Satisfaction with local environment, by gender and other selected sociodemographic characteristics 1, 2, 3, 4, 5, 6
+#https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=4510007001
 
 
