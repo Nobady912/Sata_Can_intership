@@ -30,7 +30,7 @@ setwd("~/Documents/GitHub/Sata_Can_intership")
 ##############################################################################
 #1 - (Numbeo) Climate Index (https://www.numbeo.com/climate/indices_explained.jsp)
   #1.1 using the package access the data
-  #n
+  #n 
 #1.1 using the package access the data##########################################
   #I need some time to calcuate the majo
   #the issue: still working on getting the EECC data and run it
