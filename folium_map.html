@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7dc6e912ca1bba2dfd05046deca205b2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_7dc6e912ca1bba2dfd05046deca205b2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7dc6e912ca1bba2dfd05046deca205b2 = L.map(
+                "map_7dc6e912ca1bba2dfd05046deca205b2",
+                {
+                    center: [56.1304, -106.3468],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5c77e0e3fa8f32702ff5bd9422a5cd0d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_5c77e0e3fa8f32702ff5bd9422a5cd0d.addTo(map_7dc6e912ca1bba2dfd05046deca205b2);
+        
+    
+            var marker_8d9ebda3a7b38d10913e6998e9b4531e = L.marker(
+                [51.0447, -114.0719],
+                {}
+            ).addTo(map_7dc6e912ca1bba2dfd05046deca205b2);
+        
+    
+            var div_icon_5d52102f5a443e2a4f949b7294aa013d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: black;\"\u003e\u25cf Calgary\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [150, 36]});
+            marker_8d9ebda3a7b38d10913e6998e9b4531e.setIcon(div_icon_5d52102f5a443e2a4f949b7294aa013d);
+        
+    
+        var popup_853533d954a95cead54b65b7c0440a8a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e9d4ec5900189679ad034ad540ba92c9 = $(`<div id="html_e9d4ec5900189679ad034ad540ba92c9" style="width: 100.0%; height: 100.0%;">Calgary<br>Latitude: 51.0447<br>Longitude: -114.0719</div>`)[0];
+                popup_853533d954a95cead54b65b7c0440a8a.setContent(html_e9d4ec5900189679ad034ad540ba92c9);
+            
+        
+
+        marker_8d9ebda3a7b38d10913e6998e9b4531e.bindPopup(popup_853533d954a95cead54b65b7c0440a8a)
+        ;
+
+        
+    
+    
+            marker_8d9ebda3a7b38d10913e6998e9b4531e.bindTooltip(
+                `<div>
+                     Calgary
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c723cea2fd2d419ffdd90e1c210f929a = L.marker(
+                [53.5461, -113.4938],
+                {}
+            ).addTo(map_7dc6e912ca1bba2dfd05046deca205b2);
+        
+    
+            var div_icon_3c403351205855804e9490eef313dfaa = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: black;\"\u003e\u25cf Edmonton\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [150, 36]});
+            marker_c723cea2fd2d419ffdd90e1c210f929a.setIcon(div_icon_3c403351205855804e9490eef313dfaa);
+        
+    
+        var popup_74544b91c9b6546224677c7eeca214c4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7e4e6f01bb4b6c3534e880792324861c = $(`<div id="html_7e4e6f01bb4b6c3534e880792324861c" style="width: 100.0%; height: 100.0%;">Edmonton<br>Latitude: 53.5461<br>Longitude: -113.4938</div>`)[0];
+                popup_74544b91c9b6546224677c7eeca214c4.setContent(html_7e4e6f01bb4b6c3534e880792324861c);
+            
+        
+
+        marker_c723cea2fd2d419ffdd90e1c210f929a.bindPopup(popup_74544b91c9b6546224677c7eeca214c4)
+        ;
+
+        
+    
+    
+            marker_c723cea2fd2d419ffdd90e1c210f929a.bindTooltip(
+                `<div>
+                     Edmonton
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ee3f37a399cab1909c09710c737e2ce5 = L.marker(
+                [43.2557, -79.8711],
+                {}
+            ).addTo(map_7dc6e912ca1bba2dfd05046deca205b2);
+        
+    
+            var icon_5de709e887fe3561a025582133638654 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "circle", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_ee3f37a399cab1909c09710c737e2ce5.setIcon(icon_5de709e887fe3561a025582133638654);
+        
+    
+        var popup_6c00f809e70a166a306242fa9377f1fb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_48907268a124fa2d2b13d9868effb5ff = $(`<div id="html_48907268a124fa2d2b13d9868effb5ff" style="width: 100.0%; height: 100.0%;">Hamilton<br>Latitude: 43.2557<br>Longitude: -79.8711</div>`)[0];
+                popup_6c00f809e70a166a306242fa9377f1fb.setContent(html_48907268a124fa2d2b13d9868effb5ff);
+            
+        
+
+        marker_ee3f37a399cab1909c09710c737e2ce5.bindPopup(popup_6c00f809e70a166a306242fa9377f1fb)
+        ;
+
+        
+    
+    
+            marker_ee3f37a399cab1909c09710c737e2ce5.bindTooltip(
+                `<div>
+                     Hamilton
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0389a3f44937bf3c475398d072469bba = L.marker(
+                [44.2312, -76.4859],
+                {}
+            ).addTo(map_7dc6e912ca1bba2dfd05046deca205b2);
+        
+    
+            var icon_0d640d5c9b85eab50f41c5c5c9fa2a76 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "circle", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_0389a3f44937bf3c475398d072469bba.setIcon(icon_0d640d5c9b85eab50f41c5c5c9fa2a76);
+        
+    
+        var popup_23c2e652fd10b88cab06c2b260e9d3b9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a84bcb42b591bc7ef60997601349e9c8 = $(`<div id="html_a84bcb42b591bc7ef60997601349e9c8" style="width: 100.0%; height: 100.0%;">Kingston<br>Latitude: 44.2312<br>Longitude: -76.4859</div>`)[0];
+                popup_23c2e652fd10b88cab06c2b260e9d3b9.setContent(html_a84bcb42b591bc7ef60997601349e9c8);
+            
+        
+
+        marker_0389a3f44937bf3c475398d072469bba.bindPopup(popup_23c2e652fd10b88cab06c2b260e9d3b9)
+        ;
+
+        
+    
+    
+            marker_0389a3f44937bf3c475398d072469bba.bindTooltip(
+                `<div>
+                     Kingston
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4373b7854fc9f702b7c97e7def563ad7 = L.marker(
+                [43.4516, -80.4925],
+                {}
+            ).addTo(map_7dc6e912ca1bba2dfd05046deca205b2);
+        
+    
+            var icon_dc5b6d93b44dda14c6d376496cd02df9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "circle", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_4373b7854fc9f702b7c97e7def563ad7.setIcon(icon_dc5b6d93b44dda14c6d376496cd02df9);
+        
+    
+        var popup_a03a91a9ebca18b78b25f8cdca959319 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_42a6759db0bd2c5042e0c6bdbe927343 = $(`<div id="html_42a6759db0bd2c5042e0c6bdbe927343" style="width: 100.0%; height: 100.0%;">Kitchener<br>Latitude: 43.4516<br>Longitude: -80.4925</div>`)[0];
+                popup_a03a91a9ebca18b78b25f8cdca959319.setContent(html_42a6759db0bd2c5042e0c6bdbe927343);
+            
+        
+
+        marker_4373b7854fc9f702b7c97e7def563ad7.bindPopup(popup_a03a91a9ebca18b78b25f8cdca959319)
+        ;
+
+        
+    
+    
+            marker_4373b7854fc9f702b7c97e7def563ad7.bindTooltip(
+                `<div>
+                     Kitchener
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_02e141b0ff7582d2784aa08d06cf24dc = L.marker(
+                [42.9849, -81.2453],
+                {}
+            ).addTo(map_7dc6e912ca1bba2dfd05046deca205b2);
+        
+    
+            var icon_45a0a7924b9349d3da4e2cfcaaef8204 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "circle", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_02e141b0ff7582d2784aa08d06cf24dc.setIcon(icon_45a0a7924b9349d3da4e2cfcaaef8204);
+        
+    
+        var popup_530547d3c07bbb295ed4adf78bbaf31d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_570f1f7604fd96747ed296296d868dc6 = $(`<div id="html_570f1f7604fd96747ed296296d868dc6" style="width: 100.0%; height: 100.0%;">London<br>Latitude: 42.9849<br>Longitude: -81.2453</div>`)[0];
+                popup_530547d3c07bbb295ed4adf78bbaf31d.setContent(html_570f1f7604fd96747ed296296d868dc6);
+            
+        
+
+        marker_02e141b0ff7582d2784aa08d06cf24dc.bindPopup(popup_530547d3c07bbb295ed4adf78bbaf31d)
+        ;
+
+        
+    
+    
+            marker_02e141b0ff7582d2784aa08d06cf24dc.bindTooltip(
+                `<div>
+                     London
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ef1a5750ce8a6157ba4609d8c10d70b5 = L.marker(
+                [45.5017, -73.5673],
+                {}
+            ).addTo(map_7dc6e912ca1bba2dfd05046deca205b2);
+        
+    
+            var icon_6e8e8f54360a3bceebcaa7d958c37bfe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "circle", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_ef1a5750ce8a6157ba4609d8c10d70b5.setIcon(icon_6e8e8f54360a3bceebcaa7d958c37bfe);
+        
+    
+        var popup_aed91b299ff1446994199e01e050c3f4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_512708b08e72a2538f4246e241330e30 = $(`<div id="html_512708b08e72a2538f4246e241330e30" style="width: 100.0%; height: 100.0%;">Montreal<br>Latitude: 45.5017<br>Longitude: -73.5673</div>`)[0];
+                popup_aed91b299ff1446994199e01e050c3f4.setContent(html_512708b08e72a2538f4246e241330e30);
+            
+        
+
+        marker_ef1a5750ce8a6157ba4609d8c10d70b5.bindPopup(popup_aed91b299ff1446994199e01e050c3f4)
+        ;
+
+        
+    
+    
+            marker_ef1a5750ce8a6157ba4609d8c10d70b5.bindTooltip(
+                `<div>
+                     Montreal
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cbe1d7fae0cf318d1a4526d54b12ce48 = L.marker(
+                [45.4215, -75.6972],
+                {}
+            ).addTo(map_7dc6e912ca1bba2dfd05046deca205b2);
+        
+    
+            var div_icon_561a2789a22d7f1e553f520660e8f5e5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: black;\"\u003e\u25cf Ottawa\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [150, 36]});
+            marker_cbe1d7fae0cf318d1a4526d54b12ce48.setIcon(div_icon_561a2789a22d7f1e553f520660e8f5e5);
+        
+    
+        var popup_24bc78cd7c8e8ce769d70fea43f48258 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e8537bc77d8fd1ae33cc5163949d3f67 = $(`<div id="html_e8537bc77d8fd1ae33cc5163949d3f67" style="width: 100.0%; height: 100.0%;">Ottawa<br>Latitude: 45.4215<br>Longitude: -75.6972</div>`)[0];
+                popup_24bc78cd7c8e8ce769d70fea43f48258.setContent(html_e8537bc77d8fd1ae33cc5163949d3f67);
+            
+        
+
+        marker_cbe1d7fae0cf318d1a4526d54b12ce48.bindPopup(popup_24bc78cd7c8e8ce769d70fea43f48258)
+        ;
+
+        
+    
+    
+            marker_cbe1d7fae0cf318d1a4526d54b12ce48.bindTooltip(
+                `<div>
+                     Ottawa
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0f6d69dca195c48b4f627629f06e1ec4 = L.marker(
+                [46.8139, -71.2082],
+                {}
+            ).addTo(map_7dc6e912ca1bba2dfd05046deca205b2);
+        
+    
+            var div_icon_e64b590b6f046fb62595bec21be74bc2 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: black;\"\u003e\u25cf Quebec City\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [150, 36]});
+            marker_0f6d69dca195c48b4f627629f06e1ec4.setIcon(div_icon_e64b590b6f046fb62595bec21be74bc2);
+        
+    
+        var popup_85923883f77598197876eae54ebb981b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d8e26af16e691762d10d989ca9eb06f6 = $(`<div id="html_d8e26af16e691762d10d989ca9eb06f6" style="width: 100.0%; height: 100.0%;">Quebec City<br>Latitude: 46.8139<br>Longitude: -71.2082</div>`)[0];
+                popup_85923883f77598197876eae54ebb981b.setContent(html_d8e26af16e691762d10d989ca9eb06f6);
+            
+        
+
+        marker_0f6d69dca195c48b4f627629f06e1ec4.bindPopup(popup_85923883f77598197876eae54ebb981b)
+        ;
+
+        
+    
+    
+            marker_0f6d69dca195c48b4f627629f06e1ec4.bindTooltip(
+                `<div>
+                     Quebec City
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_57b73c9afa80d8a114fd82618b59af05 = L.marker(
+                [43.6511, -79.347],
+                {}
+            ).addTo(map_7dc6e912ca1bba2dfd05046deca205b2);
+        
+    
+            var div_icon_1911ebf69f0c815f4921f0bf7ce70f04 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: black;\"\u003e\u25cf Toronto\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [150, 36]});
+            marker_57b73c9afa80d8a114fd82618b59af05.setIcon(div_icon_1911ebf69f0c815f4921f0bf7ce70f04);
+        
+    
+        var popup_654a81a727e24017cc07f98df2ad9f14 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0eab15c5cfc76ea34db21c60c1c562d6 = $(`<div id="html_0eab15c5cfc76ea34db21c60c1c562d6" style="width: 100.0%; height: 100.0%;">Toronto<br>Latitude: 43.6511<br>Longitude: -79.347</div>`)[0];
+                popup_654a81a727e24017cc07f98df2ad9f14.setContent(html_0eab15c5cfc76ea34db21c60c1c562d6);
+            
+        
+
+        marker_57b73c9afa80d8a114fd82618b59af05.bindPopup(popup_654a81a727e24017cc07f98df2ad9f14)
+        ;
+
+        
+    
+    
+            marker_57b73c9afa80d8a114fd82618b59af05.bindTooltip(
+                `<div>
+                     Toronto
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a8946aac90c11793faae17d60fdfd497 = L.marker(
+                [49.2827, -123.1207],
+                {}
+            ).addTo(map_7dc6e912ca1bba2dfd05046deca205b2);
+        
+    
+            var div_icon_07b6a2c9218dc0bc43d847e4e6870a7a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: black;\"\u003e\u25cf Vancouver\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [150, 36]});
+            marker_a8946aac90c11793faae17d60fdfd497.setIcon(div_icon_07b6a2c9218dc0bc43d847e4e6870a7a);
+        
+    
+        var popup_835c23e772625928a3a9204a64ae2ec2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1605ede44f78e48bb7888f6519d3c9ab = $(`<div id="html_1605ede44f78e48bb7888f6519d3c9ab" style="width: 100.0%; height: 100.0%;">Vancouver<br>Latitude: 49.2827<br>Longitude: -123.1207</div>`)[0];
+                popup_835c23e772625928a3a9204a64ae2ec2.setContent(html_1605ede44f78e48bb7888f6519d3c9ab);
+            
+        
+
+        marker_a8946aac90c11793faae17d60fdfd497.bindPopup(popup_835c23e772625928a3a9204a64ae2ec2)
+        ;
+
+        
+    
+    
+            marker_a8946aac90c11793faae17d60fdfd497.bindTooltip(
+                `<div>
+                     Vancouver
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a1b6e4235dd54246ddd208a8a30eb2a6 = L.marker(
+                [49.8951, -97.1384],
+                {}
+            ).addTo(map_7dc6e912ca1bba2dfd05046deca205b2);
+        
+    
+            var div_icon_07696e0eafcc1ed13a1bd46e685f3c91 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: black;\"\u003e\u25cf Winnipeg\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [150, 36]});
+            marker_a1b6e4235dd54246ddd208a8a30eb2a6.setIcon(div_icon_07696e0eafcc1ed13a1bd46e685f3c91);
+        
+    
+        var popup_9ff60ecb435960516c661d97ad35e8d4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_af6cf2fd782df676b7c22583cef9c7ab = $(`<div id="html_af6cf2fd782df676b7c22583cef9c7ab" style="width: 100.0%; height: 100.0%;">Winnipeg<br>Latitude: 49.8951<br>Longitude: -97.1384</div>`)[0];
+                popup_9ff60ecb435960516c661d97ad35e8d4.setContent(html_af6cf2fd782df676b7c22583cef9c7ab);
+            
+        
+
+        marker_a1b6e4235dd54246ddd208a8a30eb2a6.bindPopup(popup_9ff60ecb435960516c661d97ad35e8d4)
+        ;
+
+        
+    
+    
+            marker_a1b6e4235dd54246ddd208a8a30eb2a6.bindTooltip(
+                `<div>
+                     Winnipeg
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_66ddc8743ab77edd6c222224937844cb_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_5c77e0e3fa8f32702ff5bd9422a5cd0d,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_66ddc8743ab77edd6c222224937844cb = L.control.layers(
+                layer_control_66ddc8743ab77edd6c222224937844cb_layers.base_layers,
+                layer_control_66ddc8743ab77edd6c222224937844cb_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_7dc6e912ca1bba2dfd05046deca205b2);
+
+        
+</script>
+</html>
