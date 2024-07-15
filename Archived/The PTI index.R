@@ -102,14 +102,15 @@ calculate_PTI <- function(transit_score, active_score, access_score, usage_score
   transit_score * weight_transit_time +
     active_score * weight_active_time +
     access_score * weight_access +
-    usage_score * weight_usage +
+    usage_score * weight_usage -
       transit_angry_index * weight_angry}
 ###############################################################
 
 YEG_PTI <- calculate_PTI(YEG_transit_score, YEG_active_score, YEG_access_score, YEG_usage_score, YEG_public_transit_angry_index)
 YYZ_PTI <- calculate_PTI(YYZ_transit_score, YYZ_active_score, YYZ_access_score, YYZ_usage_score, YYZ_public_transit_angry_index)
 
-###############################################################
+################
+##############################################
 print(paste("Edmonton PTI with Angry Index:", YEG_PTI))
 print(paste("Toronto PTI with Angry Index:", YYZ_PTI))
 
